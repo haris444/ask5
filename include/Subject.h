@@ -1,3 +1,6 @@
+#ifndef SUBJECT_H
+#define SUBJECT_H
+
 #include <string>
 class Subject
 {
@@ -16,5 +19,6 @@ public:
     void setprof(std::string);
     std::string getprof() const;
     Subject(std::string ,std::string ,int ,std::string );
-
 };
+
+#endif

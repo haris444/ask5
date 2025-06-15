@@ -12,12 +12,11 @@ int main()
     Foititologio foit;
     try
     {
-        //Πέρασμα των δεδομένων από τα αρχεία csv στις λίστες properties της κλάσης Foititologio
         foit.init();
     }
     catch(int ex)
     {
-        if (ex=1)
+        if (ex==1)
         {
             std::cout<<"Αποτυχία ανοίγματος λίστας μαθημάτων"<<"\n";
         }
@@ -29,7 +28,6 @@ int main()
     }
     try
     {
-    //Καινούριο μάθημα
     foit.newsubject("1321P33","Digital Design",2,"Παναγιώτης Γιαννακόπουλος");
     }
     catch(int ex1)
@@ -39,8 +37,7 @@ int main()
     }
     try
     {
-    //Καινούριος φοιτητής
-    foit.newstud("AM654321","Κώστας Δημητρίου",1999,"Ερμού 9","6913579112","kosdim@gmail.com",18390007,10);
+    foit.newstud(const_cast<char*>("AM654321"),"Κώστας Δημητρίου",1999,"Ερμού 9","6913579112","kosdim@gmail.com",18390007,10);
     }
     catch(int ex2)
     {
@@ -49,8 +46,7 @@ int main()
     }
     try
     {
-    //Καινούριος καθηγητής
-    foit.newprof("AO31331","Παναγιώτης Γιαννακόπουλος",1972,"Ποσειδώνος 33","6900136948","panosgian@hotmail.com","390D0124","Digital Design");
+    foit.newprof(const_cast<char*>("AO31331"),"Παναγιώτης Γιαννακόπουλος",1972,"Ποσειδώνος 33","6900136948","panosgian@hotmail.com","390D0124","Digital Design");
     }
     catch(int ex3)
     {
@@ -62,7 +58,6 @@ int main()
 
     try
     {
-        //Προσθήκη μαθήματος σε φοιτητή
         foit.addsubjecttostudent(18390007,"Digital Design");
     }
     catch(int ex4)
@@ -80,12 +75,10 @@ int main()
         {
             std::cout<<"Δεν υπάρχει φοιτητής με τον ΑΜ που δώθηκε"<<"\n"<<"Δεν έγιναν αλλαγές"<<"\n";
         }
-
     }
 
     try
     {
-        //Αλλαγή καθηγητή μαθήματος
         foit.editsubject("Βαγγέλης Παπαδόπουλος","1321P33");
     }
     catch(int ex5)
@@ -102,7 +95,6 @@ int main()
     }
     try
     {
-        //Αλλαγή εξαμήνου μαθήματος
         foit.editsubject(3,"1321P33");
     }
     catch(int ex5)
@@ -120,7 +112,6 @@ int main()
 
     try
     {
-        //Διαγραφή μαθήματος
         foit.deletesubject("4321P12","Programming");
     }
     catch(int ex6)
@@ -137,8 +128,7 @@ int main()
     }
     try
     {
-        //Βαθμολόγιση και διόρθωση βαθμού φοιτητή
-        foit.gradestudent(,"Digital Design",6.4);
+        foit.gradestudent(18390007,"Digital Design",6.4);
     }
     catch (int ex7)
     {
@@ -159,7 +149,6 @@ int main()
 
     try
     {
-        //Αλλαγή εξαμήνου φοιτητή
         foit.editsemesterstudent(18390007,5);
     }
     catch(int ex8)
@@ -176,7 +165,6 @@ int main()
     }
     try
     {
-       //Αλλαγή ειδικότητας καθηγητή
         foit.editprofesorspec("390Α0123","Computer Science");
     }
     catch(int ex9)
@@ -194,7 +182,6 @@ int main()
 
     try
     {
-        //Διαγραφή καθηγητή
         foit.deleteprof("390Α0123");
     }
     catch(int ex10)
@@ -211,7 +198,6 @@ int main()
     }
     try
     {
-        //Διαγραφή φοιτητή
         foit.deletestud(18390007);
     }
     catch(int ex11)
@@ -226,4 +212,5 @@ int main()
           std::cout<<"Δεν υπάρχει φοιτητής με τον ΑΜ που δώθηκε"<<"\n"<<"Δεν έγιναν αλλαγές"<<"\n";
         }
     }
+    return 0;
 }

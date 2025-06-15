@@ -1,6 +1,8 @@
+#ifndef PROFESOR_H
+#define PROFESOR_H
+
 #include "Person.h"
 #include <string>
-
 
 class Profesor: public Person
 {
@@ -14,3 +16,5 @@ public:
     std::string getspecialty() const;
     Profesor(char*,std::string,int,std::string,std::string,std::string,std::string,std::string);
 };
+
+#endif

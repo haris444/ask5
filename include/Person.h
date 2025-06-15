@@ -1,3 +1,6 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <string>
 class Person
 {
@@ -9,7 +12,7 @@ private:
      std::string phonenum;
      std::string email;
 public:
-     char* getidnum() const;  
+     char* getidnum() const;
      void setidnum(char*);
      std::string getname() const;
      void setname(std::string);
@@ -22,8 +25,10 @@ public:
      std::string getemail() const;
      void setemail(std::string);
      int calcage() const;
-     ~Person();
+     virtual ~Person();
      Person(const Person&);
      Person(std::string,std::string,int,std::string,std::string,std::string);
      Person(std::string,std::string,int);
 };
+
+#endif

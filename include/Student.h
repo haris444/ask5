@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <list>
 #include "Person.h"
 #include <string>
@@ -20,3 +23,5 @@ public:
     std::list<float> getgrades() const;
     Student(char*,std::string,int,std::string,std::string,std::string,int,int);
 };
+
+#endif

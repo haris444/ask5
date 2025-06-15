@@ -1,3 +1,6 @@
+#ifndef FOITITOLOGIO_H
+#define FOITITOLOGIO_H
+
 #include "Person.h"
 #include "Student.h"
 #include "Profesor.h"
@@ -9,13 +12,13 @@ class Foititologio
 {
 private:
     std::list<Subject> SubList;
-    std::list<Person> PerList;
+    std::list<Person*> PerList;
 public:
     void newsubject(std::string,std::string ,int,std::string);
     void editsubject(std::string,std::string);
     void editsubject(int,std::string);
     void deletesubject(std::string,std::string);
-    void newstud(char*,std::string,int,std::string,std::string,std::string,int,int,std::list<std::string>,std::list<float>);
+    void newstud(char*,std::string,int,std::string,std::string,std::string,int,int);
     void newprof(char*,std::string,int,std::string,std::string,std::string,std::string,std::string);
     void addsubjecttostudent(int,std::string);
     void removesubjectfromstudent(int,std::string);
@@ -28,4 +31,7 @@ public:
     void sendemailstud();
     void gradestudent(int,std::string,float);
     void init();
+    ~Foititologio();
 };
+
+#endif
